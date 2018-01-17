@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Contact | AKAD</title>
+	//=include templates/_head.html
+</head>
+<body>
+
+	<div class="ba-intro">
+		//=include templates/header.html
+		<div class="container">
+
+			<div class="ba-intro__body text-center">
+				<h1 class="ba-page-title">
+					Contact US
+				</h1>
+				<ul class="ba-breadcrumbs">
+					<li><a href="#">Home</a></li>
+					<li><span>Contact</span></li>
+				</ul>
+
+			</div>
+
+		</div>
+	</div>
+
+	<main>
+		<section class="ba-section ba-section--contact">
+			<!-- BEGIN container  -->
+			<div class="container">
+				<div class="row ba-flex-row">
+					<div class="col-xs-12 col-sm-6">
+						<form action="get" class="ba-contact-form">
+							<div class="row">
+								<div class="col-sm-6">
+									<input type="text" name="user-name" required placeholder="YOUR NAME" class="ba-contact-form__row">
+								</div>
+								<div class="col-sm-6">
+									<input type="email" name="user-email" required placeholder="YOUR EMAIL" class="ba-contact-form__row">
+								</div>
+							</div>
+							<input type="text" name="user-object" required placeholder="OBJECT" class="ba-contact-form__row">
+							<textarea  class="ba-contact-form__row--textarea" name="message" required placeholder="MESSAGE" rows="5"></textarea>
+							<button class="ba-button" type="submit">SEND</button>
+						</form>
+
+					</div>
+					<div class="col-xs-12 col-sm-6 ">
+						<div id="ba-map">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END container -->
+
+		</section>
+	</main>
+	//=include templates/footer.html
+	//=include templates/scripts.html
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB23_-iQ10tWnvm5NCa7eR_Rw0GDxfd0ag"></script>
+</body>
