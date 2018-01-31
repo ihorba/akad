@@ -1,0 +1,209 @@
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+
+
+
+// .ba-breadcrumbs {
+// 	margin: 0;
+// 	padding: 0;
+// 	list-style: none;
+// 	font-size: 0;
+// }
+
+// .ba-breadcrumbs li {
+// 	display: inline-block;
+// 	font: 700 14px/1 Montserrat, sans-serif;
+// }
+
+// .ba-breadcrumbs li:not(:first-child):before {
+// 	content: '/';
+// 	margin: 0 4px;
+// }
+
+// .ba-breadcrumbs span,
+// .ba-breadcrumbs a {
+
+// 	color: $text-color;
+// 	text-transform: uppercase;
+// }
+
+// .ba-breadcrumbs a:hover {
+// 	text-decoration: underline;
+// }
+
+.ba-title {
+	text-transform: uppercase;
+	margin: 0 0 12px;
+}
+
+.ba-title span {
+	display: inline-block;
+	position: relative;
+	z-index: 0;
+}
+
+.ba-title span:before {
+	position: absolute;
+	content: "";
+	background-color:  $brand-primary;
+	width: 68px;
+	height: 21px;
+	z-index: -1;
+	left: 0;
+	bottom: 3px;
+}
+
+.ba-subtitle {
+	text-transform: uppercase;
+	margin: 0 0 25px;
+	font-family: 'Open Sans';
+	font-weight: 800;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+p {
+	margin: 0 0 15px ;
+}
+
+.ba-section {
+	padding-top: 140px;
+	&__content{
+		max-width: 750px;
+		margin: 0 auto 100px;
+		text-align: center;
+	}
+}
+
+.ba-section__head {
+	text-align: center;
+	margin: 0 auto 90px;
+	padding-top: 6px;
+	max-width: 750px;
+}
+
+.ba-section__title {
+	margin-bottom: 8px;
+}
+
+.ba-benefit-title {
+	margin: 0 0 10px;
+}
+
+.ba-benefit-title__icon {
+	background-color:  $brand-primary;
+	width: 40px;
+	height: 40px;
+	line-height: 42px;
+	color: #FFF;
+	text-align: center;
+	display: inline-block;
+	font-size: 30px;
+	vertical-align: middle;
+	margin-right: 13px;
+}
+
+.ba-benefit-title__text {
+	vertical-align: middle;
+	display: inline-block;
+	line-height: 1.1;
+	font-size: 18px;
+	width: calc(100% - 64px);
+}
+
+.ba-team {
+	img {
+		display: block;
+	}
+
+	&__member {
+		margin-bottom: 30px;
+	}
+
+	&__link {
+		background-color: #efeff0;
+		padding: 50px 30px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		p {
+			font-size: 18px;
+			font-style: italic;
+		}
+	}
+}
+.ba-testimonial {
+	padding: 150px 0;
+
+	&__row + &__row{
+		margin-top: 30px;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		border: 1px solid $text-color;
+		text-align: center;
+		width: 30%;
+		padding: 10px 0;
+		margin-bottom: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__hero {
+		display: block;
+		margin: 0 auto 20px;
+	}
+}
+
+.slick-dots {
+	position: absolute;
+	bottom: -50px;
+	left: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	li {
+		display: inline-block;
+		margin: 0 4px;
+	}
+	button {
+		border: none;
+		background: transparent;
+		display: block;
+		width: 16px;
+		height: 5px;
+		background-color: $text-color;
+		padding: 0;
+		outline: 0;
+		line-height: 0;
+		font-size: 0;
+		color: transparent;
+		cursor: pointer;
+	}
+	.slick-active button {
+		background-color: $brand-primary;
+		width: 31px;
+	}
+}
+
+.ba-slider {
+	@include breakpoint(xs){
+		margin-bottom: 100px;
+	}
+}

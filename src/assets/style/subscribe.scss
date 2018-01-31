@@ -1,0 +1,43 @@
+.ba-subscribe {
+	background-color: $brand-primary;
+	padding: 50px 0;
+
+	&__title {
+		color: $body-bg;
+	}
+
+	&__body {
+		background-color: $body-bg;
+		padding: 15px 25px 20px;
+		p {
+			color: $gray-light;
+		}
+	}
+}
+
+.ba-form__title {
+	margin: 0;
+}
+
+.ba-button--sub {
+	background-color: #FFF;
+	color: $brand-primary;
+}
+.ba-form {
+	display: flex;
+	[type="email"] {
+		line-height: 50px;
+		height: 50px;
+		flex-grow: 1;
+		font-family: $headings-font-family;
+		font-size: 12px;
+		font-weight: 700;
+		padding-left: 15px;
+		&::placeholder {
+			color: $gray-light;
+		}
+	}
+}
+.ba-call-to-action {
+	margin-bottom: $grid-gutter-width;
+}

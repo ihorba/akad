@@ -49,3 +49,27 @@
 		height: 300px;
 	}
 }
+
+.ba-contact{
+  padding-top: 100px;
+  &__socials{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li{
+      display: inline-block;
+
+      a{
+        margin-right: 15px;
+      }
+    }
+  }
+  &__link{
+    &:hover{
+      text-decoration: none;
+    }
+    &--mail{
+      font-weight: 700;
+    }
+  }
+}

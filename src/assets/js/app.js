@@ -1,10 +1,15 @@
 //=require jquery.min.js
 
 // to inlude bootstrap plugins add "=" sign below
-// require javascripts/bootstrap/*.*
-//=require javascripts/bootstrap.min.js
+//=require javascripts/bootstrap/transition.js
+//=require javascripts/bootstrap/collapse.js
+//=require javascripts/bootstrap/tab.js
 
+// require javascripts/bootstrap.min.js
+
+//=require isotope.pkgd.min.js
 //=require slick.min.js
+//=require map.js
 
 ;(function($){
 
@@ -19,184 +24,26 @@
 		});
 	});
 
-	function initMap() {
-		var roma = {lat: 42.462473, lng: 11.832275};
-		var mapDiv = document.getElementById('ba-map');
+	var worksGrid = $('.ba-portfolio');
 
-		var map = new google.maps.Map(document.getElementById('ba-map'), {
-			zoom: 8,
-			center: roma,
-			disableDefaultUI: true,
-			styles: [
-			{
-				"elementType": "geometry",
-				"stylers": [
-				{
-					"color": "#f5f5f5"
-				}
-				]
-			},
-			{
-				"elementType": "labels.icon",
-				"stylers": [
-				{
-					"visibility": "off"
-				}
-				]
-			},
-			{
-				"elementType": "labels.text.fill",
-				"stylers": [
-				{
-					"color": "#616161"
-				}
-				]
-			},
-			{
-				"elementType": "labels.text.stroke",
-				"stylers": [
-				{
-					"color": "#f5f5f5"
-				}
-				]
-			},
-			{
-				"featureType": "administrative.land_parcel",
-				"elementType": "labels.text.fill",
-				"stylers": [
-				{
-					"color": "#bdbdbd"
-				}
-				]
-			},
-			{
-				"featureType": "poi",
-				"elementType": "geometry",
-				"stylers": [
-				{
-					"color": "#eeeeee"
-				}
-				]
-			},
-			{
-				"featureType": "poi",
-				"elementType": "labels.text.fill",
-				"stylers": [
-				{
-					"color": "#757575"
-				}
-				]
-			},
-			{
-				"featureType": "poi.park",
-				"elementType": "geometry",
-				"stylers": [
-				{
-					"color": "#e5e5e5"
-				}
-				]
-			},
-			{
-				"featureType": "poi.park",
-				"elementType": "labels.text.fill",
-				"stylers": [
-				{
-					"color": "#9e9e9e"
-				}
-				]
-			},
-			{
-				"featureType": "road",
-				"elementType": "geometry",
-				"stylers": [
-				{
-					"color": "#ffffff"
-				}
-				]
-			},
-			{
-				"featureType": "road.arterial",
-				"elementType": "labels.text.fill",
-				"stylers": [
-				{
-					"color": "#757575"
-				}
-				]
-			},
-			{
-				"featureType": "road.highway",
-				"elementType": "geometry",
-				"stylers": [
-				{
-					"color": "#dadada"
-				}
-				]
-			},
-			{
-				"featureType": "road.highway",
-				"elementType": "labels.text.fill",
-				"stylers": [
-				{
-					"color": "#616161"
-				}
-				]
-			},
-			{
-				"featureType": "road.local",
-				"elementType": "labels.text.fill",
-				"stylers": [
-				{
-					"color": "#9e9e9e"
-				}
-				]
-			},
-			{
-				"featureType": "transit.line",
-				"elementType": "geometry",
-				"stylers": [
-				{
-					"color": "#e5e5e5"
-				}
-				]
-			},
-			{
-				"featureType": "transit.station",
-				"elementType": "geometry",
-				"stylers": [
-				{
-					"color": "#eeeeee"
-				}
-				]
-			},
-			{
-				"featureType": "water",
-				"elementType": "geometry",
-				"stylers": [
-				{
-					"color": "#c9c9c9"
-				}
-				]
-			},
-			{
-				"featureType": "water",
-				"elementType": "labels.text.fill",
-				"stylers": [
-				{
-					"color": "#9e9e9e"
-				}
-				]
-			}
-			]
+	$(window).on('load', function(){
+
+		worksGrid.isotope({
+	            // options
+	            itemSelector: '.ba-portfolio__item',
+	            percentPosition: true,
+
+	        });
+
+		$('.ba-portfolio-filter').on( 'click', '[data-filter]', function(e) {
+			e.preventDefault();
+			var filterValue = $(this).data('filter');
+			worksGrid.isotope({ filter: filterValue });
+			$('.ba-active[data-filter]').removeClass('ba-active');
+			$(this).addClass('ba-active');
 		});
+	});
 
-		var marker1 = new google.maps.Marker({
-			position: roma,
-			map: map,
-			icon: 'assets/img/marker.svg',
-		});
-	}
-
-	window.onload = initMap;
 
 })(jQuery);
 

@@ -1,0 +1,37 @@
+.ba-footer {
+	text-align: center;
+	@include breakpoint(md){
+		text-align: right;
+	}
+}
+.ba-footer-menu{
+	float: none;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+
+	@include breakpoint(sm){
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	@include breakpoint(md){
+		justify-content: flex-start;
+	}
+	li {
+		@include breakpoint(md){
+			&:not(:first-child):before {
+				content: "-";
+			}
+		}
+		a {
+			color: $gray;
+			display: inline-block;
+			vertical-align: middle;
+			&:hover {
+				color: $text-color;
+				background: none;
+			}
+		}
+	}
+}
